@@ -43,7 +43,7 @@ module RailsAdmin
           end
 
           register_instance_option :formatted_value do
-            value.present? ? JSON.pretty_generate(value) : nil
+            value.present? ? JSON.pretty_generate(value || default_value) : nil
           end
 
           def dom_name
